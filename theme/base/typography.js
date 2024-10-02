@@ -1,7 +1,7 @@
 const typography = {
-  sans: ["Roboto", "sans-serif"],
-  serif: ["Roboto Slab", "serif"],
-  body: ["Roboto", "sans-serif"],
-};
+  sans: ["Inter", "sans-serif"],
+  serif: ["Inter", "serif"],
+  body: ["Inter", "sans-serif"],
+}
 
-module.exports = typography;
+module.exports = typography
