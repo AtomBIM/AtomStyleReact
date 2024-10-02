@@ -30,6 +30,10 @@ export type colors =
   | "AtomYellow"
   | "AtomYellow800"
   | "AtomYellow100"
+  | "AtomBG100"
+  | "AtomBG000"
+  | "AtomWhite"
+  | "AtomBlack"
 
 export type animation = {
   initial?: object
@@ -47,8 +51,7 @@ export type offsetType =
       alignmentAxis?: number | null
     }
 
-export interface NewAnimatePresenceProps
-  extends Omit<AnimatePresenceProps, "children"> {
+export interface NewAnimatePresenceProps extends Omit<AnimatePresenceProps, "children"> {
   children: React.ReactNode
 }
 
@@ -78,6 +81,10 @@ export const propTypesColors: string[] = [
   "AtomYellow",
   "AtomYellow800",
   "AtomYellow100",
+  "AtomBG100",
+  "AtomBG000",
+  "AtomWhite",
+  "AtomBlack",
 ]
 
 export const propTypesAnimation = PropTypes.shape({
