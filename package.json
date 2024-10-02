@@ -8,8 +8,7 @@
   "main": "index.js",
   "typings": "index.d.ts",
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/AtomBIM"
+    "access": "public"
   },
   "scripts": {
     "build:cjs": "swc ./src -d ./dist --only ./src/**/*.ts --config-file .swcrc",

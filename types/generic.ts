@@ -6,12 +6,12 @@ import type { UseDismissProps } from "@floating-ui/react"
 export type colors =
   | "AtomGray900"
   | "AtomGray850"
+  | "AtomGray800"
   | "AtomGray700"
   | "AtomGray300"
   | "AtomGray200"
   | "AtomGray100"
   | "AtomGray50"
-  | "AtomGray"
   | "AtomGreen"
   | "AtomGreen800"
   | "AtomGreen100"
@@ -62,7 +62,6 @@ export const propTypesColors: string[] = [
   "AtomGray200",
   "AtomGray100",
   "AtomGray50",
-  "AtomGray",
   "AtomGreen",
   "AtomGreen800",
   "AtomGreen100",
