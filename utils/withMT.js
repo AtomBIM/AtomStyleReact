@@ -11,8 +11,8 @@ const breakpoints = require("../theme/base/breakpoints");
 const materialTailwindConfig = {
   darkMode: "class",
   content: [
-    "./node_modules/@atombim/atomreactstyle/components/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@atombim/atomreactstyle/theme/components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@atombim/atomstylereact/components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@atombim/atomstylereact/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     colors,
