@@ -1,7 +1,7 @@
 {
   "name": "@atombim/atomstylereact",
   "homepage": "",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "@atomstyle/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Atom.",
   "repository": "https://github.com/AtomBIM/AtomStyleReact.git",
   "license": "MIT",
