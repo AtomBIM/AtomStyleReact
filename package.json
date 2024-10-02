@@ -1,7 +1,7 @@
 {
   "name": "@atombim/atomstylereact",
   "homepage": "",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "@atomstyle/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Atom.",
   "repository": "https://github.com/AtomBIM/AtomStyleReact.git",
   "license": "MIT",
@@ -49,30 +49,5 @@
   "peerDependencies": {
     "react": "^18.0.1",
     "react-dom": "^18.0.1"
-  },
-  "keywords": [
-    "material tailwind",
-    "material tailwind react",
-    "javascript",
-    "react",
-    "next",
-    "create react app",
-    "remix",
-    "vite",
-    "gatsby",
-    "tailwind",
-    "tailwind components",
-    "tailwind elements",
-    "tailwind library",
-    "react library",
-    "react components library",
-    "tailwind sections",
-    "tailwind css",
-    "tailwind ui",
-    "tailwind css react",
-    "tailwind css next",
-    "tailwind css remix",
-    "tailwind css vite",
-    "tailwind css gatsby"
-  ]
+  }
 }
