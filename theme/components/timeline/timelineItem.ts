@@ -1,22 +1,17 @@
-import {
-  color,
-  variant,
-  propTypeColor,
-  propTypeVariant,
-} from "../../../types/components/timeline"
+import { color, variant, propTypeColor, propTypeVariant } from "../../../types/components/timeline";
 
 export interface TimelineItemStyleTypes {
   defaultProps?: {
-    color?: color
-    variant?: variant
-  }
+    color?: color;
+    variant?: variant;
+  };
   valid?: {
-    colors?: string[]
-    variants?: string[]
-  }
+    colors?: string[];
+    variants?: string[];
+  };
   styles?: {
-    base?: object
-  }
+    base?: object;
+  };
 }
 
 export const timelineItem: TimelineItemStyleTypes = {
@@ -36,6 +31,6 @@ export const timelineItem: TimelineItemStyleTypes = {
       gap: "gap-2",
     },
   },
-}
+};
 
-export default timelineItem
+export default timelineItem;
