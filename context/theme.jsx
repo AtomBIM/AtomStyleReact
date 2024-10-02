@@ -6,7 +6,7 @@ import combineMerge from "../utils/combineMerge";
 
 const AtomStyleTheme = createContext(theme);
 
-AtomStyleTheme.displayName = "MaterialTailwindThemeProvider";
+AtomStyleTheme.displayName = "AtomStyleThemeProvider";
 
 function ThemeProvider({ value = theme, children }) {
   const mergedValue = merge(theme, value, { arrayMerge: combineMerge });
