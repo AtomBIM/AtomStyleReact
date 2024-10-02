@@ -140,7 +140,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
                   size="sm"
                   variant="text"
                   color={
-                    variant === "outlined" || variant === "ghost"
+                    variant === "outlined"
                       ? color
                       : "AtomGreen"
                   }

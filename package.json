@@ -1,7 +1,7 @@
 {
   "name": "@atombim/atomstylereact",
   "homepage": "",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "@atomstyle/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Atom.",
   "repository": "https://github.com/AtomBIM/AtomStyleReact.git",
   "license": "MIT",
@@ -13,7 +13,7 @@
   "scripts": {
     "build:cjs": "swc ./src -d ./dist --only ./src/**/*.ts --config-file .swcrc",
     "build:dts": "tsc --declaration --declarationMap --emitDeclarationOnly",
-    "copy": "cp ./package.json ./dist && cp ./tailwind.config.js ./dist",
+    "copy": "@powershell copy ./package.json ./dist && @powershell copy ./tailwind.config.js ./dist",
     "build": "pnpm build:cjs && pnpm build:dts && pnpm copy",
     "lint:check": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.json --no-eslintrc",
     "prettier:check": "prettier -c ."
@@ -24,17 +24,13 @@
     "deepmerge": "4.2.2",
     "framer-motion": "6.5.1",
     "prop-types": "15.8.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwind-merge": "1.8.1"
   },
-  "peerDependencies": {
-    "react": "^16 || ^17 || ^18",
-    "react-dom": "^16 || ^17 || ^18"
-  },
   "devDependencies": {
-    "@swc/cli": "0.1.59",
-    "@swc/core": "1.3.24",
+    "@swc/cli": "^0.1.59",
+    "@swc/core": "^1.3.24",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
@@ -48,6 +44,8 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "path": "0.12.7",
     "prettier": "2.8.1",
+    "rollup": "^4.23.0",
+    "rollup-plugin-dts": "^6.1.1",
     "typescript": "4.9.4"
   },
   "keywords": [

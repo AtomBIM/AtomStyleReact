@@ -1,27 +1,21 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 
 // framer-motion
-import {
-  AnimatePresence,
-  m,
-  MotionProps,
-  LazyMotion,
-  domAnimation,
-} from "framer-motion"
+import { AnimatePresence, m, MotionProps, LazyMotion, domAnimation } from "framer-motion";
 
 // utils
-import classnames from "classnames"
-import merge from "deepmerge"
-import { twMerge } from "tailwind-merge"
-import findMatch from "../../utils/findMatch"
-import objectsToString from "../../utils/objectsToString"
+import classnames from "classnames";
+import merge from "deepmerge";
+import { twMerge } from "tailwind-merge";
+import findMatch from "../../utils/findMatch";
+import objectsToString from "../../utils/objectsToString";
 
 // context
-import { useTheme } from "../../context/theme"
+import { useTheme } from "../../context/theme";
 
 // types
-import type { NewAnimatePresenceProps } from "../../types/generic"
+import type { NewAnimatePresenceProps } from "../../types/generic";
 import type {
   variant,
   color,
@@ -33,7 +27,7 @@ import type {
   className,
   value,
   size,
-} from "../../types/components/chip"
+} from "../../types/components/chip";
 import {
   propTypesVariant,
   propTypesColor,
@@ -45,84 +39,63 @@ import {
   propTypesClassName,
   propTypesValue,
   propTypesSize,
-} from "../../types/components/chip"
-import IconButton from "../IconButton"
+} from "../../types/components/chip";
+import IconButton from "../IconButton";
 
 export interface ChipProps extends Omit<MotionProps, "animate"> {
-  variant?: variant
-  size?: size
-  color?: color
-  icon?: icon
-  open?: open
-  onClose?: onClose
-  action?: action
-  animate?: animate
-  className?: className
-  value: value
+  variant?: variant;
+  size?: size;
+  color?: color;
+  icon?: icon;
+  open?: open;
+  onClose?: onClose;
+  action?: action;
+  animate?: animate;
+  className?: className;
+  value: value;
 }
 
 export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
   (
-    {
-      variant,
-      size,
-      color,
-      icon,
-      open,
-      onClose,
-      action,
-      animate,
-      className,
-      value,
-      ...rest
-    },
-    ref
+    { variant, size, color, icon, open, onClose, action, animate, className, value, ...rest },
+    ref,
   ) => {
     // 1. init
-    const { chip } = useTheme()
-    const { defaultProps, valid, styles } = chip
-    const { base, variants, sizes } = styles
+    const { chip } = useTheme();
+    const { defaultProps, valid, styles } = chip;
+    const { base, variants, sizes } = styles;
 
     // 2. set default props
-    variant = variant ?? defaultProps.variant
-    size = size ?? defaultProps.size
-    color = color ?? defaultProps.color
-    animate = animate ?? defaultProps.animate
-    open = open ?? defaultProps.open
-    action = action ?? defaultProps.action
-    onClose = onClose ?? defaultProps.onClose
-    className = twMerge(defaultProps.className || "", className)
+    variant = variant ?? defaultProps.variant;
+    size = size ?? defaultProps.size;
+    color = color ?? defaultProps.color;
+    animate = animate ?? defaultProps.animate;
+    open = open ?? defaultProps.open;
+    action = action ?? defaultProps.action;
+    onClose = onClose ?? defaultProps.onClose;
+    className = twMerge(defaultProps.className || "", className);
 
     // 3. set styles
-    const chipBase = objectsToString(base.chip)
-    const chipAction = objectsToString(base.action)
-    const chipIcon = objectsToString(base.icon)
+    const chipBase = objectsToString(base.chip);
+    const chipAction = objectsToString(base.action);
+    const chipIcon = objectsToString(base.icon);
     const chipVariant = objectsToString(
       variants[findMatch(valid.variants, variant, "filled")][
-        findMatch(valid.colors, color, "gray")
-      ]
-    )
-    const chipSize = objectsToString(
-      sizes[findMatch(valid.sizes, size, "md")]["chip"]
-    )
-    const actionSize = objectsToString(
-      sizes[findMatch(valid.sizes, size, "md")]["action"]
-    )
-    const iconSize = objectsToString(
-      sizes[findMatch(valid.sizes, size, "md")]["icon"]
-    )
-    const classes = twMerge(
-      classnames(chipBase, chipVariant, chipSize),
-      className
-    )
-    const actionClasses = classnames(chipAction, actionSize)
-    const iconClasses = classnames(chipIcon, iconSize)
+        findMatch(valid.colors, color, "AtomGray900")
+      ],
+    );
+    const chipSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]["chip"]);
+    const actionSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]["action"]);
+    const iconSize = objectsToString(sizes[findMatch(valid.sizes, size, "md")]["icon"]);
+    const classes = twMerge(classnames(chipBase, chipVariant, chipSize), className);
+    const actionClasses = classnames(chipAction, actionSize);
+    const iconClasses = classnames(chipIcon, iconSize);
     const contentClasses = classnames({
       "ml-4": icon && size === "sm",
       "ml-[18px]": icon && size === "md",
       "ml-5": icon && size === "lg",
       "mr-5": onClose,
-    })
+    });
 
     // 4. set animation
     const mainAnimation = {
@@ -132,16 +105,15 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
       mount: {
         opacity: 1,
       },
-    }
+    };
 
-    const appliedAnimation = merge(mainAnimation, animate)
+    const appliedAnimation = merge(mainAnimation, animate);
 
     // 5. icon template
-    const iconTemplate = <div className={iconClasses}>{icon}</div>
+    const iconTemplate = <div className={iconClasses}>{icon}</div>;
 
     // 6. Create an instance of AnimatePresence because of the types issue with the children
-    const NewAnimatePresence: React.FC<NewAnimatePresenceProps> =
-      AnimatePresence
+    const NewAnimatePresence: React.FC<NewAnimatePresenceProps> = AnimatePresence;
 
     // 7. return
     return (
@@ -164,11 +136,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
                   onClick={onClose}
                   size="sm"
                   variant="text"
-                  color={
-                    variant === "outlined" || variant === "ghost"
-                      ? color
-                      : "white"
-                  }
+                  color={color}
                   className={actionClasses}
                 >
                   <svg
@@ -183,11 +151,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
                     })}
                     strokeWidth={2}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </IconButton>
               )}
@@ -196,9 +160,9 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
           )}
         </NewAnimatePresence>
       </LazyMotion>
-    )
-  }
-)
+    );
+  },
+);
 
 Chip.propTypes = {
   variant: PropTypes.oneOf(propTypesVariant),
@@ -211,8 +175,8 @@ Chip.propTypes = {
   animate: propTypesAnimate,
   className: propTypesClassName,
   value: propTypesValue,
-}
+};
 
-Chip.displayName = "AtomStyle.Chip"
+Chip.displayName = "AtomStyle.Chip";
 
-export default Chip
+export default Chip;

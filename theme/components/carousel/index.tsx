@@ -1,3 +1,5 @@
+import React from "react"
+
 // types
 import type {
   prevArrow,
