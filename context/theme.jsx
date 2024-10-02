@@ -21,4 +21,4 @@ ThemeProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { AtomStyleTheme as AtomStyleTheme, ThemeProvider, useTheme };
+export { AtomStyleTheme, ThemeProvider, useTheme };
