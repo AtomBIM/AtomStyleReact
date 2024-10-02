@@ -1,14 +1,14 @@
 {
-  "name": "@atomstyle/react",
+  "name": "@atombim/atomstylereact",
   "homepage": "",
   "version": "1.0.1",
   "description": "@atomstyle/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Atom.",
-  "repository": "https://github.com/AtomBIM/AtomStyleReact",
+  "repository": "https://github.com/AtomBIM/AtomStyleReact.git",
   "license": "MIT",
   "main": "index.js",
   "typings": "index.d.ts",
   "publishConfig": {
-    "access": "public"
+    "registry": "https://npm.pkg.github.com/AtomBIM"
   },
   "scripts": {
     "build:cjs": "swc ./src -d ./dist --only ./src/**/*.ts --config-file .swcrc",
