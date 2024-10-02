@@ -1,9 +1,13 @@
-/** @type {import('tailwindcss').Config} */
-
-const withMT = require("@material-tailwind/react/utils/withMT")
+const withMT = require("./utils/withMT");
 
 module.exports = withMT({
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  purge: ["./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./theme/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     fontFamily: {
       sans: ["Inter"],
@@ -46,4 +50,4 @@ module.exports = withMT({
     },
   },
   plugins: [],
-})
+});

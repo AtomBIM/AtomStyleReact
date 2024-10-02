@@ -1,7 +1,7 @@
 {
   "name": "@atombim/atomstylereact",
   "homepage": "",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "@atomstyle/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Atom.",
   "repository": "https://github.com/AtomBIM/AtomStyleReact.git",
   "license": "MIT",
@@ -16,17 +16,21 @@
     "copy": "@powershell copy ./package.json ./dist && @powershell copy ./tailwind.config.js ./dist",
     "build": "pnpm build:cjs && pnpm build:dts && pnpm copy",
     "lint:check": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.json --no-eslintrc",
-    "prettier:check": "prettier -c ."
+    "prettier:check": "prettier -c .",
+    "rollup": "rollup -c"
   },
   "dependencies": {
     "@floating-ui/react": "0.19.0",
+    "autoprefixer": "^9.8.8",
     "classnames": "2.3.2",
     "deepmerge": "4.2.2",
     "framer-motion": "6.5.1",
+    "postcss": "^7.0.39",
     "prop-types": "15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwind-merge": "1.8.1"
+    "tailwind-merge": "1.8.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.59",
@@ -46,7 +50,12 @@
     "prettier": "2.8.1",
     "rollup": "^4.23.0",
     "rollup-plugin-dts": "^6.1.1",
+    "tailwindcss": "3.3.6",
     "typescript": "4.9.4"
+  },
+  "peerDependencies": {
+    "react": "^18.0.1",
+    "react-dom": "^18.0.1"
   },
   "keywords": [
     "material tailwind",
